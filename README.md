@@ -1,6 +1,6 @@
 # Typescript with Express Node
 
-Traversy Media Typescript with Express Node jump start app
+Getting Started with NodeJS Express using TypeScript
 
 #### Install Typescript Compiler Globally
 ```

@@ -1,7 +1,7 @@
 {
   "name": "tsc-express-app",
   "version": "1.0.0",
-  "description": "Traversy Media Typescript with Express Node jump start app",
+  "description": "Getting Started with NodeJS Express using TypeScript",
   "main": "index.js",
   "scripts": {
     "start": "node dist/server",
