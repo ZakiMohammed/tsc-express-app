@@ -40,30 +40,30 @@ npm i express
 #### Install Dev Dependencies 
 Run the following command to install typescript, ts-node, nodemon, @types/node and @types/express as dev dependency (we don't need these for production we need it for development)
 ```
-npm i -D typescript ts-node nodemon @types/node @types/express
+npm i -D typescript ts-node ts-node-dev @types/node @types/express
 ```
 The `-D` above is for dev-dependencies. The dependencies in `package.json` will be as follows after running the above command:
 ```
 "dependencies": {
     "express": "^4.17.1"
-  },
-  "devDependencies": {
+},
+"devDependencies": {
     "@types/express": "^4.17.4",
     "@types/node": "^13.9.8",
-    "nodemon": "^2.0.2",
     "ts-node": "^8.8.1",
+    "ts-node-dev": "^1.0.0-pre.60",
     "typescript": "^3.8.3"
-  }
+}
 ```
 
 #### Update Package JSON Script
 Update the `package.json` script command as follows:
 ```
 "scripts": {
-    "start": "node dist/app.js",
-    "dev": "nodemon src/app.ts",
-    "build": "tsc -p ."
-  },
+    "start": "node dist/server",
+    "build": "tsc -p .",
+    "watch": "ts-node-dev --respawn --transpile-only ./src/server.ts"
+}
 ```
 
 #### Starter App.ts Code

@@ -7,7 +7,11 @@ const employees = employeesJson as Employee[];
 
 // GET: api/employees
 router.get('/', async (req: Request, res: Response) => {
-    res.json(employees.sort((a, b) => b.Id - a.Id));
+    try {
+        res.json(employees.sort((a, b) => b.Id - a.Id));
+    } catch (error) {
+        res.status(500).json(error);
+    }
 });
 
 // GET: api/employees/:id
@@ -44,7 +48,7 @@ router.put('/:id', async (req: Request, res: Response) => {
         const index = employees.findIndex(i => i.Id === +req.params.id);
         const employee = employees[index];
         if (employee) {
-            employees[index] = { ...employee, ...req.body };
+            employees[index] = { ...employee, ...(req.body as Employee) };
             res.json(employees[index]);
         } else {
             res.status(404).json({
