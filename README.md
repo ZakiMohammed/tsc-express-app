@@ -40,7 +40,7 @@ npm i express
 #### Install Dev Dependencies 
 Run the following command to install typescript, ts-node, nodemon, @types/node and @types/express as dev dependency (we don't need these for production we need it for development)
 ```
-npm i -D typescript ts-node ts-node-dev @types/node @types/express
+npm i -D typescript ts-node-dev @types/node @types/express
 ```
 The `-D` above is for dev-dependencies. The dependencies in `package.json` will be as follows after running the above command:
 ```
@@ -50,7 +50,6 @@ The `-D` above is for dev-dependencies. The dependencies in `package.json` will 
 "devDependencies": {
     "@types/express": "^4.17.4",
     "@types/node": "^13.9.8",
-    "ts-node": "^8.8.1",
     "ts-node-dev": "^1.0.0-pre.60",
     "typescript": "^3.8.3"
 }
@@ -66,8 +65,8 @@ Update the `package.json` script command as follows:
 }
 ```
 
-#### Starter App.ts Code
-Write the following code in `src/app.ts` file to test the `npm run dev` command to start the server
+#### Starter server.ts Code
+Write the following code in `src/server.ts` file to test the `npm run watch` command to start the server
 ```
 import express from 'express'
 
@@ -80,7 +79,7 @@ app.get('/', (req, res) => {
 app.listen(5000, () => console.log('Server running...'))
 ```
 
-#### Add Typescript flavour to App.ts Code
+#### Add Typescript flavour to server.ts Code
 Now lets talk in Typescript way. Add the types to these type less variables
 ```
 import express, { Application, Request, Response, NextFunction } from 'express'
